@@ -1,0 +1,20 @@
+{% extends "authorsapp/base.html" %}
+
+{% block content %}
+
+<h2>{{ author.fullname }}</h2>
+<p><strong>Дата рождения:</strong> {{ author.born_date }}</p>
+<p><strong>Место рождения:</strong> {{ author.born_location }}</p>
+<p><strong>Описание:</strong> {{ author.description }}</p>
+
+<h3>Цитаты:</h3>
+  {% if quotes %}
+    <ul>
+      {% for quote in quotes %}
+        <li>{{ quote.quote }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>У этого автора пока нет цитат.</p>
+  {% endif %}
+{% endblock %}

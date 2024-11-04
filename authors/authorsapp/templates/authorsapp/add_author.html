@@ -1,0 +1,14 @@
+{% extends "authorsapp/base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<h2>Add Author</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add Author</button>
+  </form>
+
+{% endif %}
+{% endblock %}
